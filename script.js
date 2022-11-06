@@ -24,6 +24,8 @@ check.addEventListener("click", function () {
     if (scoreNumber <= 0) {
       message.textContent = "💥 You Lost";
       body.style.backgroundColor = "red";
+      number.textContent = secretNumber;
+      number.style.width = "15rem";
     } else {
       message.textContent = "👇🏾 Lower!";
       scoreNumber--;
@@ -33,6 +35,8 @@ check.addEventListener("click", function () {
     if (scoreNumber <= 0) {
       message.textContent = "💥 You Lost";
       body.style.backgroundColor = "red";
+      number.textContent = secretNumber;
+      number.style.width = "15rem";
     } else {
       message.textContent = "👆🏾 Higher!";
       scoreNumber--;
@@ -51,8 +55,9 @@ check.addEventListener("click", function () {
 again.addEventListener("click", function () {
   number.textContent = "?";
   document.querySelector("body").style.backgroundColor = "#222";
-  message.textContent = "Start guessing";
+  message.textContent = "Start guessing...";
   scoreNumber = 20;
   score.textContent = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
+  guess.value = "";
 });
